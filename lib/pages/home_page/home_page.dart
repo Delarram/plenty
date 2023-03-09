@@ -3,22 +3,23 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 import 'package:cached_network_image/cached_network_image.dart';
+import 'package:newpj/pages/home_page/home_page_listview.dart';
 import '../../resources/color_const.dart';
 
 import '../../widgets/custom_text.dart';
 
-class YogaDetailScreen extends StatefulWidget {
-  const YogaDetailScreen({
+class Homepage extends StatefulWidget {
+  const Homepage({
     Key? key,
   }) : super(key: key);
 
 
 
   @override
-  State<YogaDetailScreen> createState() => _YogaDetailScreenState();
+  State<Homepage> createState() => _HomepageState();
 }
 
-class _YogaDetailScreenState extends State<YogaDetailScreen> {
+class _HomepageState extends State<Homepage> {
   @override
   void initState() {
     // TODO: implement initState
@@ -172,7 +173,7 @@ class _YogaDetailScreenState extends State<YogaDetailScreen> {
                 ],
               ),
               Flexible(
-                  child: Container(child: Text("Listviewsecdtion"),)
+                  child: HomePageListview()
               )
             ],
           ),

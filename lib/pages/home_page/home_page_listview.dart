@@ -6,8 +6,8 @@ import '../../widgets/custom_text.dart';
 
 
 
-class YogaDetailListview extends StatelessWidget {
-  const YogaDetailListview({
+class HomePageListview extends StatelessWidget {
+  const HomePageListview({
     Key? key,
   }) : super(key: key);
 
