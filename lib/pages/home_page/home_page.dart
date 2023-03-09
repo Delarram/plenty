@@ -21,13 +21,7 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   @override
-  void initState() {
-    // TODO: implement initState
-    super.initState();
-    WidgetsFlutterBinding.ensureInitialized()
-        .addPostFrameCallback((timeStamp) async {});
 
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +67,7 @@ class _HomepageState extends State<Homepage> {
                 color: Colors.black,
               ),
               backgroundColor: cBackGroundWhite,
-              expandedHeight: MediaQuery.of(context).size.height / 2.5,
+              expandedHeight: MediaQuery.of(context).size.height / 4,
               floating: false,
               pinned: true,
               flexibleSpace: FlexibleSpaceBar(
@@ -112,70 +106,75 @@ class _HomepageState extends State<Homepage> {
           ];
         },
         body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        CustomTextView(
-                          text: "Second Title",
-                          fontSize: 22.sp,
-                          fontWeight: FontWeight.w700,
-                        ),
-                        SizedBox(
-                          height: 5.h,
-                        ),
-                        CustomTextView(
-                          text:
-                              "under one ",
-                          fontSize: 14.sp,
-                          fontWeight: FontWeight.w500,
-                          fontFamily: 'poppin',
-                          fontColor: cBackGroundThree,
-                        ),
-                      ],
-                    ),
-                  ),
-                  Container(
-                    height: 30.h,
-                    decoration: BoxDecoration(
-                        color: cSecondaryOne,
-                        borderRadius: BorderRadius.circular(30.r)),
-                    child: MaterialButton(
-                      onPressed: () {},
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment:
-                        CrossAxisAlignment.center,
+          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 16.h),
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12)
+            ),
+            child: Column(
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          Icon(
-                            Icons.play_arrow_rounded,
-                            color: cBackGroundWhite,
-                            size: 18.sp,
+                          CustomTextView(
+                            text: "Second Title",
+                            fontSize: 22.sp,
+                            fontWeight: FontWeight.w700,
                           ),
                           SizedBox(
-                            width: 5.w,
+                            height: 5.h,
                           ),
                           CustomTextView(
-                            text: "Play",
-                            fontColor: const Color(0xffFFFFFF),
+                            text:
+                                "under one ",
                             fontSize: 14.sp,
+                            fontWeight: FontWeight.w500,
+                            fontFamily: 'poppin',
+                            fontColor: cBackGroundThree,
                           ),
                         ],
                       ),
                     ),
-                  ),
-                ],
-              ),
-              Flexible(
-                  child: HomePageListview()
-              )
-            ],
+                    Container(
+                      height: 30.h,
+                      decoration: BoxDecoration(
+                          color: cSecondaryOne,
+                          borderRadius: BorderRadius.circular(30.r)),
+                      child: MaterialButton(
+                        onPressed: () {},
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment:
+                          CrossAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.play_arrow_rounded,
+                              color: cBackGroundWhite,
+                              size: 18.sp,
+                            ),
+                            SizedBox(
+                              width: 5.w,
+                            ),
+                            CustomTextView(
+                              text: "Play",
+                              fontColor: const Color(0xffFFFFFF),
+                              fontSize: 14.sp,
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                Flexible(
+                    child: HomePageListview()
+                )
+              ],
+            ),
           ),
         ),
       ),
