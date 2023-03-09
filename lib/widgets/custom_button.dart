@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'custom_text_view.dart';
+
+import 'custom_text.dart';
+
 
 class CustomButtonView extends StatelessWidget {
   const CustomButtonView(
@@ -57,7 +58,8 @@ class CustomButtonView extends StatelessWidget {
                 //   shape: BoxShape.circle,
                 //   border: Border.all(color: const Color(0xffFFFFFF),width: 2),
                 // ),
-                child:icon==null? null : Icon(icon,color:iconColor,size: 14.sp,),)
+                child:icon==null? null : Icon(icon,color:iconColor,size: 14,),)
+
             ],
           ),
         ),
