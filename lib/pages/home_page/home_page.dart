@@ -93,7 +93,7 @@ class _YogaDetailScreenState extends State<YogaDetailScreen> {
                             fit: BoxFit.cover,
                             imageUrl:
                             //widget.yogaListVO.videoImage ?? "",
-                            "https:\/\/mindfulness.app.myanmarcafe.trade\/wp-content\/uploads\/2022\/10\/step-1.png",
+                            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5-F8otEAn1mYIv9mvLPu97JHBMG_9IWR_MVhxjktJ7SRe-BwAAxUC2I-HjgY-jGbwVSM&usqp=CAU",
                             progressIndicatorBuilder:
                                 (context, url, downloadProgress) =>
                                 Center(
