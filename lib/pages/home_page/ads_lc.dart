@@ -81,15 +81,14 @@ class _LocalServiceItemState extends State<LocalServiceItem> {
           children: widget.localServiceList.map((url) {
             int index = widget.localServiceList.indexOf(url);
             return Container(
-              width: 9.h,
-              height: 9.w,
+              width: 12.h,
+              height: 4.w,
               margin: EdgeInsets.symmetric(
                 vertical: 15.h,
-                horizontal: 2.w,
+                horizontal: 4.w,
               ),
               decoration: BoxDecoration(
-                shape: BoxShape.circle,
-                color: _current == index ? cPrimaryOne : cBackGroundFive,
+                color: _current == index ? cPrimaryOne : Colors.white,
               ),
             );
           }).toList(),

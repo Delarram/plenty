@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:newpj/pages/home_page/ads_lc.dart';
-import 'package:newpj/pages/home_page/home_page_listview.dart';
 import '../../resources/color_const.dart';
-
 import '../../widgets/custom_text.dart';
 
 class Homepage extends StatefulWidget {
@@ -23,70 +19,73 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: cBackGroundFive,
-      body: Container(
-        decoration: BoxDecoration(color: Colors.white),
-        child: NestedScrollView(
-            headerSliverBuilder:
-                (BuildContext context, bool innerBoxIsScrolled) {
-              return <Widget>[
-                SliverAppBar(
-                  leading: Builder(builder: (BuildContext context) {
-                    return GestureDetector(
-                      onTap: () {
-                        Navigator.pop(context);
-                      },
-                      child: Container(
-                        margin: EdgeInsets.only(left: 10),
-                        height: 20,
-                        width: 20,
-                        decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: Colors.white,
-                            border: Border.all(width: 3, color: cSecondaryOne)),
-                      ),
-                    );
-                  }),
-                  title: Builder(builder: (BuildContext context) {
-                    return CustomTextView(
-                      text: "This is the title",
-                      fontColor: cBackGroundOne,
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18.sp,
-                    );
-                  }),
-                  iconTheme: const IconThemeData(
-                    color: Colors.black,
-                  ),
-                  backgroundColor: cBackGroundWhite,
-                  expandedHeight: MediaQuery.of(context).size.height / 4,
-                  floating: false,
-                  pinned: true,
-                  flexibleSpace: FlexibleSpaceBar(
-                    centerTitle: true,
-                    background: Container(
-                      decoration: const BoxDecoration(color: cBackGroundFive),
-                      child: Column(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          SizedBox(
-                            height: 70,
-                          ),
-                          Flexible(child: LocalServiceItem()),
-                        ],
-                      ),
+      body: NestedScrollView(
+          headerSliverBuilder:
+              (BuildContext context, bool innerBoxIsScrolled) {
+            return <Widget>[
+              SliverAppBar(
+                leading: Builder(builder: (BuildContext context) {
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Container(
+                      margin: EdgeInsets.only(left: 10),
+                      height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                          border: Border.all(width: 3, color: cSecondaryOne)),
+                    ),
+                  );
+                }),
+                title: Builder(builder: (BuildContext context) {
+                  return CustomTextView(
+                    text: "This is the title",
+                    fontColor: cBackGroundOne,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18.sp,
+                  );
+                }),
+                iconTheme: const IconThemeData(
+                  color: Colors.black,
+                ),
+                backgroundColor: cBackGroundWhite,
+                expandedHeight: MediaQuery.of(context).size.height / 4,
+                floating: false,
+                pinned: true,
+                flexibleSpace: FlexibleSpaceBar(
+                  centerTitle: true,
+                  background: Container(
+                    decoration: const BoxDecoration(color: cBackGroundFive),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        SizedBox(
+                          height: 80,
+                        ),
+                        Flexible(child: LocalServiceItem()),
+                      ],
                     ),
                   ),
                 ),
-              ];
-            },
-            body: Container(
-              height: 30,
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(20),
-                      topLeft: Radius.circular(20)),
-                  color: Colors.white),
-            )),
+              ),
+            ];
+          },
+          body: Container(
+            decoration: BoxDecoration(
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    topLeft: Radius.circular(20)),
+                color: Colors.white,
+            ),
+            child: Column(
+              children: [
+
+              ],
+            ),
+          )
       ),
     );
   }
