@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newpj/pages/home_page/ads_lc.dart';
 import 'package:newpj/pages/home_page/popular_book.dart';
+import 'package:newpj/pages/home_page/popular_listview.dart';
 import 'package:newpj/pages/home_page/summaries_listview.dart';
 import 'package:newpj/pages/home_page/summeries_title.dart';
 import '../../resources/color_const.dart';
@@ -85,15 +86,16 @@ class _HomepageState extends State<Homepage> {
                   color:Colors.white,
               ),
               child: Column(
-                children: const [
+                children:  [
                   SummariesTitle(),
                   SizedBox(
-                      height: 300,
+                      height: 290,
                       child: SummariesListview()),
+                  Container(height: 10,width: double.infinity,color: cBackGroundSix,),
                   PopularBookTitle(),
                   SizedBox(
-                      height: 300,
-                      child: SummariesListview()),
+                      height: 250,
+                      child: PopularListview()),
                 ],
               ),
             ),

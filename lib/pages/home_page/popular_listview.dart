@@ -5,8 +5,8 @@ import 'package:newpj/resources/color_const.dart';
 import 'package:newpj/widgets/custom_button.dart';
 import '../../widgets/custom_text.dart';
 
-class SummariesListview extends StatelessWidget {
-  const SummariesListview({
+class PopularListview extends StatelessWidget {
+  const PopularListview({
     Key? key,
   }) : super(key: key);
   @override
@@ -54,23 +54,20 @@ class BusinessCategoryItemView extends StatelessWidget {
           ]),
       child: Column(
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(13.r),
-              child: CachedNetworkImage(
-                height: 150,
-                width: 200,
-                fit: BoxFit.cover,
-                imageUrl:
-                    "https://us.123rf.com/450wm/vejaa/vejaa2203/vejaa220300238/184438727-female-hands-holding-pile-of-books-over-light-blue-background-education-self-learning-book-swap.jpg?ver=6",
-                progressIndicatorBuilder: (context, url, downloadProgress) =>
-                    Center(
-                  child: CircularProgressIndicator(
-                      value: downloadProgress.progress),
-                ),
-                errorWidget: (context, url, error) => const Icon(Icons.error),
-              ),
+          ClipRRect(
+            borderRadius: BorderRadius.only(topLeft: Radius.circular(13.r),topRight: Radius.circular(13.r)),
+            child: CachedNetworkImage(
+              height: 150,
+              width: 200,
+              fit: BoxFit.cover,
+              imageUrl:
+              "https://media.istockphoto.com/id/1193274889/photo/stack-of-books-on-the-table-of-public-library.jpg?s=612x612&w=0&k=20&c=Vf8FcfOTnOaGQevnSJRc416rolMJqt0Lvnc3y8SpOWE=",
+              progressIndicatorBuilder: (context, url, downloadProgress) =>
+                  Center(
+                    child: CircularProgressIndicator(
+                        value: downloadProgress.progress),
+                  ),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
           ),
           SizedBox(
@@ -84,7 +81,7 @@ class BusinessCategoryItemView extends StatelessWidget {
           ),
           SizedBox(height: 10,),
           CustomButtonView(
-            width: 180,
+              width: 180,
               height: 30.h,
               borderRadius: 30,
               text: "View More",
