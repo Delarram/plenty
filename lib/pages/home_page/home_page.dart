@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newpj/pages/home_page/ads_lc.dart';
+import 'package:newpj/pages/home_page/summaries_listview.dart';
 import 'package:newpj/pages/home_page/summeries_title.dart';
 import '../../resources/color_const.dart';
 import '../../widgets/custom_text.dart';
@@ -83,7 +84,10 @@ class _HomepageState extends State<Homepage> {
             ),
             child: Column(
               children: [
-                SummariesTitle()
+                SummariesTitle(),
+                Container(
+                    height: 300,
+                    child: SummariesListview())
               ],
             ),
           )
