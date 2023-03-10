@@ -42,25 +42,18 @@ class _HomepageState extends State<Homepage> {
                     width: 20,
                     decoration: BoxDecoration(
                         shape: BoxShape.circle,
-                        color: Colors.white
-                    ),
-                    child: const Icon(
-                      Icons.arrow_back,size: 20,
+                        color: Colors.white,
+                      border: Border.all(width: 3,color: cSecondaryOne)
                     ),
                   ),
                 );
               }),
               title: Builder(builder: (BuildContext context) {
-                return Padding(
-                  padding: EdgeInsets.symmetric(
-                    horizontal: 50.w,
-                  ),
-                  child: CustomTextView(
-                    text: "This is the title",
-                    fontColor: cBackGroundOne,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18.sp,
-                  ),
+                return CustomTextView(
+                  text: "This is the title",
+                  fontColor: cBackGroundOne,
+                  fontWeight: FontWeight.bold,
+                  fontSize: 18.sp,
                 );
               }),
               iconTheme: const IconThemeData(
@@ -79,12 +72,11 @@ class _HomepageState extends State<Homepage> {
                           Color(0xffF7E2FF),
                         ])),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Flexible(
                           child: CachedNetworkImage(
                             height: 204.w,
-                            width: 183.w,
                             fit: BoxFit.cover,
                             imageUrl:
                             //widget.yogaListVO.videoImage ?? "",
@@ -105,76 +97,74 @@ class _HomepageState extends State<Homepage> {
             ),
           ];
         },
-        body: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 16.h),
-          child: Container(
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12)
-            ),
-            child: Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Expanded(
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
+        body: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(12)
+          ),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CustomTextView(
+                        text: "Second Title",
+                        fontSize: 22.sp,
+                        fontWeight: FontWeight.w700,
+                      ),
+                      SizedBox(
+                        height: 5.h,
+                      ),
+                      CustomTextView(
+                        text:
+                            "under one ",
+                        fontSize: 14.sp,
+                        fontWeight: FontWeight.w500,
+                        fontFamily: 'poppin',
+                        fontColor: cBackGroundThree,
+                      ),
+                    ],
+                  ),
+                  Container(
+                    height: 30.h,
+                    decoration: BoxDecoration(
+                        color: cSecondaryOne,
+                        borderRadius: BorderRadius.circular(30.r)),
+                    child: MaterialButton(
+                      onPressed: () {},
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        crossAxisAlignment:
+                        CrossAxisAlignment.center,
                         children: [
-                          CustomTextView(
-                            text: "Second Title",
-                            fontSize: 22.sp,
-                            fontWeight: FontWeight.w700,
+                          Icon(
+                            Icons.play_arrow_rounded,
+                            color: cBackGroundWhite,
+                            size: 18.sp,
                           ),
                           SizedBox(
-                            height: 5.h,
+                            width: 5.w,
                           ),
                           CustomTextView(
-                            text:
-                                "under one ",
+                            text: "Play",
+                            fontColor: const Color(0xffFFFFFF),
                             fontSize: 14.sp,
-                            fontWeight: FontWeight.w500,
-                            fontFamily: 'poppin',
-                            fontColor: cBackGroundThree,
                           ),
                         ],
                       ),
                     ),
-                    Container(
-                      height: 30.h,
-                      decoration: BoxDecoration(
-                          color: cSecondaryOne,
-                          borderRadius: BorderRadius.circular(30.r)),
-                      child: MaterialButton(
-                        onPressed: () {},
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment:
-                          CrossAxisAlignment.center,
-                          children: [
-                            Icon(
-                              Icons.play_arrow_rounded,
-                              color: cBackGroundWhite,
-                              size: 18.sp,
-                            ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            CustomTextView(
-                              text: "Play",
-                              fontColor: const Color(0xffFFFFFF),
-                              fontSize: 14.sp,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                Flexible(
-                    child: HomePageListview()
-                )
-              ],
-            ),
+                  ),
+                ],
+              ),
+              // Flexible(
+              //     child: HomePageListview()
+              // )
+              Container(color: cSecondaryOne,
+              padding: EdgeInsets.symmetric(horizontal: 10,vertical: 10),
+              )
+            ],
           ),
         ),
       ),
