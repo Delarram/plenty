@@ -72,11 +72,11 @@ class _HomepageState extends State<Homepage> {
                           Color(0xffF7E2FF),
                         ])),
                     child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.end,
                       children: [
                         Flexible(
                           child: CachedNetworkImage(
-                            height: 204.w,
+                            height: 150.w,
                             fit: BoxFit.cover,
                             imageUrl:
                             //widget.yogaListVO.videoImage ?? "",
