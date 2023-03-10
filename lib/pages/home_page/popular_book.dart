@@ -4,8 +4,8 @@ import 'package:newpj/resources/color_const.dart';
 
 import '../../widgets/custom_text.dart';
 
-class SummariesTitle extends StatelessWidget {
-  const SummariesTitle({Key? key}) : super(key: key);
+class PopularBookTitle extends StatelessWidget {
+  const PopularBookTitle({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,14 +14,12 @@ class SummariesTitle extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-         Column(children: [
-           const CustomTextView(
-             text: "Free Summeries",
-             fontWeight: FontWeight.bold,
-             fontSize: 16,
-           ),
-           Container(width: 120,height: 1,color: Colors.black,)
-         ],),
+          const CustomTextView(
+            text: "Popular Books",
+            fontWeight: FontWeight.bold,
+            fontSize: 16,
+            isUnderLine: true,
+          ),
           CustomTextView(
             text: "All",
             fontColor:cSecondaryOne,

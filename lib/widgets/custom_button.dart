@@ -6,7 +6,7 @@ import 'custom_text.dart';
 class CustomButtonView extends StatelessWidget {
   const CustomButtonView(
       {Key? key,
-        this.width,
+      required  this.width,
         required this.height,
         required this.borderRadius,
         required this.text,
@@ -16,7 +16,7 @@ class CustomButtonView extends StatelessWidget {
         this.buttonColor, this.icon, this.iconColor, this.iconSize, this.fontFamily='poppin',})
       : super(key: key);
 
-  final double? width;
+  final double width;
   final double height;
   final double borderRadius;
   final String text;

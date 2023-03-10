@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newpj/pages/home_page/ads_lc.dart';
+import 'package:newpj/pages/home_page/popular_book.dart';
 import 'package:newpj/pages/home_page/summaries_listview.dart';
 import 'package:newpj/pages/home_page/summeries_title.dart';
 import '../../resources/color_const.dart';
@@ -75,20 +76,26 @@ class _HomepageState extends State<Homepage> {
               ),
             ];
           },
-          body: Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.only(
-                    topRight: Radius.circular(20),
-                    topLeft: Radius.circular(20)),
-                color: Colors.white,
-            ),
-            child: Column(
-              children: [
-                SummariesTitle(),
-                Container(
-                    height: 300,
-                    child: SummariesListview())
-              ],
+          body: SingleChildScrollView(
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(20),
+                      topLeft: Radius.circular(20)),
+                  color:Colors.white,
+              ),
+              child: Column(
+                children: const [
+                  SummariesTitle(),
+                  SizedBox(
+                      height: 300,
+                      child: SummariesListview()),
+                  PopularBookTitle(),
+                  SizedBox(
+                      height: 300,
+                      child: SummariesListview()),
+                ],
+              ),
             ),
           )
       ),
