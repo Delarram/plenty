@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newpj/pages/home_page/ads_lc.dart';
+import 'package:newpj/pages/home_page/best_seller.dart';
+import 'package:newpj/pages/home_page/best_seller_listview.dart';
 import 'package:newpj/pages/home_page/popular_book.dart';
 import 'package:newpj/pages/home_page/popular_listview.dart';
 import 'package:newpj/pages/home_page/summaries_listview.dart';
@@ -22,9 +24,9 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: cBackGroundFive,
       body: NestedScrollView(
-          headerSliverBuilder:
-              (BuildContext context, bool innerBoxIsScrolled) {
+          headerSliverBuilder: (BuildContext context, bool innerBoxIsScrolled) {
             return <Widget>[
               SliverAppBar(
                 leading: Builder(builder: (BuildContext context) {
@@ -33,7 +35,7 @@ class _HomepageState extends State<Homepage> {
                       Navigator.pop(context);
                     },
                     child: Container(
-                      margin: EdgeInsets.only(left: 10),
+                      margin: const EdgeInsets.only(left: 10),
                       height: 20,
                       width: 20,
                       decoration: BoxDecoration(
@@ -61,7 +63,7 @@ class _HomepageState extends State<Homepage> {
                 flexibleSpace: FlexibleSpaceBar(
                   centerTitle: true,
                   background: Container(
-                    decoration: const BoxDecoration(color: cBackGroundFive),
+                    decoration: const BoxDecoration(color: cBackGroundSix),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.end,
                       children: [
@@ -79,28 +81,37 @@ class _HomepageState extends State<Homepage> {
           body: SingleChildScrollView(
             child: Container(
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                      topRight: Radius.circular(20),
-                      topLeft: Radius.circular(20)),
-                  color:Colors.white,
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(20),
+                    topLeft: Radius.circular(20)),
+                color: Colors.white,
               ),
               child: Column(
-                children:  [
+                children: [
                   const SummariesTitle(),
-                  const SizedBox(
-                      height: 290,
-                      child: SummariesListview()),
-                  Container(height: 10,width: double.infinity,color: cBackGroundSix,),
+                  const SizedBox(height: 290, child: SummariesListview()),
+                  Container(
+                    height: 10,
+                    width: double.infinity,
+                    color: cBackGroundSix,
+                  ),
                   const PopularBookTitle(),
-                  const SizedBox(
-                      height: 250,
-                      child: PopularListview()),
-
+                  const SizedBox(height: 250, child: PopularListview()),
+                  Container(
+                    height: 10,
+                    width: double.infinity,
+                    color: cBackGroundSix,
+                  ),
+                  BestSellerTitle(),
+                  SizedBox(
+                    height: 250,
+                    width: double.infinity,
+                    child: BestSellerListView(),
+                  )
                 ],
               ),
             ),
-          )
-      ),
+          )),
     );
   }
 }

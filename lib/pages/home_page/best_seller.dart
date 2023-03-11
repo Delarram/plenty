@@ -21,15 +21,15 @@ class BestSellerTitle extends StatelessWidget {
             isUnderLine: true,
           ),
           Container(
-            padding: EdgeInsets.all(10),
+            padding: EdgeInsets.all(5),
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: cSecondaryOne
+                borderRadius: BorderRadius.circular(12),
+                color: cSecondaryOne
             ),
             child: CustomTextView(
               text: "All",
               fontColor:Colors.white,
-              fontSize: 14.sp,
+              fontSize: 10.sp,
               fontWeight: FontWeight.bold,
             ),
           )
