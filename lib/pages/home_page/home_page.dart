@@ -22,7 +22,6 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: cBackGroundFive,
       body: NestedScrollView(
           headerSliverBuilder:
               (BuildContext context, bool innerBoxIsScrolled) {
@@ -96,6 +95,7 @@ class _HomepageState extends State<Homepage> {
                   const SizedBox(
                       height: 250,
                       child: PopularListview()),
+
                 ],
               ),
             ),
