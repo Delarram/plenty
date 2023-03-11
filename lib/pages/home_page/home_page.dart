@@ -87,13 +87,13 @@ class _HomepageState extends State<Homepage> {
               ),
               child: Column(
                 children:  [
-                  SummariesTitle(),
-                  SizedBox(
+                  const SummariesTitle(),
+                  const SizedBox(
                       height: 290,
                       child: SummariesListview()),
                   Container(height: 10,width: double.infinity,color: cBackGroundSix,),
-                  PopularBookTitle(),
-                  SizedBox(
+                  const PopularBookTitle(),
+                  const SizedBox(
                       height: 250,
                       child: PopularListview()),
                 ],
