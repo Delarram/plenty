@@ -104,7 +104,7 @@ class _HomepageState extends State<Homepage> {
                   ),
                   BestSellerTitle(),
                   SizedBox(
-                    height: 250,
+                    height: 280,
                     width: double.infinity,
                     child: BestSellerListView(),
                   )
