@@ -89,7 +89,7 @@ class _HomepageState extends State<Homepage> {
               child: Column(
                 children: [
                   const SummariesTitle(),
-                  const SizedBox(height: 290, child: SummariesListview()),
+                  const SizedBox(height: 250, child: SummariesListview()),
                   Container(
                     height: 10,
                     width: double.infinity,
@@ -102,12 +102,13 @@ class _HomepageState extends State<Homepage> {
                     width: double.infinity,
                     color: cBackGroundSix,
                   ),
-                  BestSellerTitle(),
-                  SizedBox(
-                    height: 280,
+                  const BestSellerTitle(),
+                  const SizedBox(
+                    height: 250,
                     width: double.infinity,
                     child: BestSellerListView(),
-                  )
+                  ),
+
                 ],
               ),
             ),

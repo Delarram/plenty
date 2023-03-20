@@ -58,7 +58,7 @@ class BusinessCategoryItemView extends StatelessWidget {
           ClipRRect(
             borderRadius: BorderRadius.only(topLeft: Radius.circular(13.r),topRight: Radius.circular(13.r)),
             child: CachedNetworkImage(
-              height: 150,
+              height: 130,
               width: 200,
               fit: BoxFit.cover,
               imageUrl:
@@ -74,13 +74,10 @@ class BusinessCategoryItemView extends StatelessWidget {
           SizedBox(
             height: 5,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 10),
-            child: Flexible(
-              child: CustomTextView(
-                text: "Naughty But Nice Revolution",
-                fontSize: 12.sp,
-              ),
+          Flexible(
+            child: CustomTextView(
+              text: "Naughty But Nice Revolution",
+              fontSize: 12.sp,
             ),
           ),
           SizedBox(height: 5,),

@@ -53,30 +53,31 @@ class BusinessCategoryItemView extends StatelessWidget {
           ]),
       child: Column(
         children: [
-          ClipRRect(
-            borderRadius: BorderRadius.only(topLeft: Radius.circular(13.r),topRight: Radius.circular(13.r)),
-            child: CachedNetworkImage(
-              height: 150,
-              width: 200,
-              fit: BoxFit.cover,
-              imageUrl:
-              "https://media.istockphoto.com/id/1193274889/photo/stack-of-books-on-the-table-of-public-library.jpg?s=612x612&w=0&k=20&c=Vf8FcfOTnOaGQevnSJRc416rolMJqt0Lvnc3y8SpOWE=",
-              progressIndicatorBuilder: (context, url, downloadProgress) =>
-                  Center(
-                    child: CircularProgressIndicator(
-                        value: downloadProgress.progress),
-                  ),
-              errorWidget: (context, url, error) => const Icon(Icons.error),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(12),
+              child: CachedNetworkImage(
+                height: 130,
+                width: 180,
+                fit: BoxFit.cover,
+                imageUrl:
+                "https://media.istockphoto.com/id/1193274889/photo/stack-of-books-on-the-table-of-public-library.jpg?s=612x612&w=0&k=20&c=Vf8FcfOTnOaGQevnSJRc416rolMJqt0Lvnc3y8SpOWE=",
+                progressIndicatorBuilder: (context, url, downloadProgress) =>
+                    Center(
+                      child: CircularProgressIndicator(
+                          value: downloadProgress.progress),
+                    ),
+                errorWidget: (context, url, error) => const Icon(Icons.error),
+              ),
             ),
           ),
           SizedBox(
             height: 5,
           ),
-          Flexible(
-            child: CustomTextView(
-              text: "Naughty But Nice Revolution",
-              fontSize: 12.sp,
-            ),
+          CustomTextView(
+            text: "Naughty But Nice Revolution",
+            fontSize: 12.sp,
           ),
           SizedBox(height: 10,),
           CustomButtonView(
