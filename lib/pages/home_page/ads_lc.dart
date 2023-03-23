@@ -52,7 +52,7 @@ class _LocalServiceItemState extends State<LocalServiceItem> {
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
             Padding(
-              padding: EdgeInsets.only(right: 10.w, top: 5.h),
+              padding: EdgeInsets.only(right: 10.w, top: 5.h,bottom: 11),
               child: CustomTextView(
                     text: "All",
                     fontColor: cSecondaryOne,

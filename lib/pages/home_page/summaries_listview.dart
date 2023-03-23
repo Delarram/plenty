@@ -59,8 +59,8 @@ class BusinessCategoryItemView extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(13.r),
               child: CachedNetworkImage(
-                height: 150,
-                width: 200,
+                height: 130,
+                width: 180,
                 fit: BoxFit.cover,
                 imageUrl:
                     "https://us.123rf.com/450wm/vejaa/vejaa2203/vejaa220300238/184438727-female-hands-holding-pile-of-books-over-light-blue-background-education-self-learning-book-swap.jpg?ver=6",
@@ -76,11 +76,9 @@ class BusinessCategoryItemView extends StatelessWidget {
           SizedBox(
             height: 5,
           ),
-          Flexible(
-            child: CustomTextView(
-              text: "Naughty But Nice Revolution",
-              fontSize: 12.sp,
-            ),
+          CustomTextView(
+            text: "Naughty But Nice Revolution ",
+            fontSize: 12.sp,
           ),
           SizedBox(height: 10,),
           CustomButtonView(
@@ -88,7 +86,7 @@ class BusinessCategoryItemView extends StatelessWidget {
               height: 30.h,
               borderRadius: 30,
               text: "View More",
-              buttonColor: cSecondaryOne,
+              buttonColor: cGreenColor,
               fontColor: Colors.white,
               onPressed: (){
               })

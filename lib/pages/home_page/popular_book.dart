@@ -20,11 +20,18 @@ class PopularBookTitle extends StatelessWidget {
             fontSize: 16,
             isUnderLine: true,
           ),
-          CustomTextView(
-            text: "All",
-            fontColor:cSecondaryOne,
-            fontSize: 14.sp,
-            fontWeight: FontWeight.bold,
+          Container(
+            padding: EdgeInsets.all(5),
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              color: cGreenColor
+            ),
+            child: CustomTextView(
+              text: "All",
+              fontColor:Colors.white,
+              fontSize: 10.sp,
+              fontWeight: FontWeight.bold,
+            ),
           )
         ],
       ),

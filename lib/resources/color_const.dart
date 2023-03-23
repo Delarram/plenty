@@ -4,6 +4,7 @@ const Color cPrimaryOne=Color(0xff6FC7FA);
 const Color cPrimaryTwo=Color(0xff71F9F9);
 const Color cPrimaryThree=Color(0xff97D9FA);
 
+const Color cGreenColor =  Color(0xff5DBB63);
 
 const Color cSecondaryOne = Color(0xffC773FC);
 const Color cSecondaryTwo = Color(0xff8B76FB);
