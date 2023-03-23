@@ -26,7 +26,7 @@ class SummariesTitle extends StatelessWidget {
             padding: EdgeInsets.all(5),
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(12),
-                color: cSecondaryOne
+                color: cGreenColor
             ),
             child: CustomTextView(
               text: "All",

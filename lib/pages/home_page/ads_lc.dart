@@ -12,9 +12,10 @@ class LocalServiceItem extends StatefulWidget {
       : super(key: key);
 
   List<String> localServiceList = [
-    "https://images.wallpapersden.com/image/download/purple-sunrise-4k-vaporwave_bGplZmiUmZqaraWkpJRmbmdlrWZlbWU.jpg",
-    "https://wallpaperaccess.com/full/2637581.jpg",
-    "https://uhdwallpapers.org/uploads/converted/20/01/14/the-mandalorian-5k-1920x1080_477555-mm-90.jpg"
+    "https://cdn.pixabay.com/photo/2018/01/04/09/39/love-story-3060241_960_720.jpg",
+    "https://cdn.pixabay.com/photo/2015/09/05/21/51/reading-925589_960_720.jpg",
+    "https://cdn.pixabay.com/photo/2018/03/19/18/20/tea-time-3240766_960_720.jpg",
+    "https://cdn.pixabay.com/photo/2017/03/02/05/14/bible-2110439_960_720.jpg",
   ];
 
   @override
@@ -51,12 +52,17 @@ class _LocalServiceItemState extends State<LocalServiceItem> {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Padding(
-              padding: EdgeInsets.only(right: 10.w, top: 5.h,bottom: 11),
+            Container(
+              padding: EdgeInsets.all(5),
+              margin: EdgeInsets.only(right: 15,bottom: 5),
+              decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(12),
+                  color: cGreenColor
+              ),
               child: CustomTextView(
                     text: "All",
-                    fontColor: cSecondaryOne,
-                    fontSize: 15.sp,
+                    fontColor:Colors.white,
+                    fontSize: 10.sp,
                     fontWeight: FontWeight.bold,
                   ),
             )
@@ -88,6 +94,7 @@ class _LocalServiceItemState extends State<LocalServiceItem> {
                 horizontal: 4.w,
               ),
               decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(10),
                 color: _current == index ? cPrimaryOne : Colors.white,
               ),
             );

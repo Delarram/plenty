@@ -41,7 +41,7 @@ class _HomepageState extends State<Homepage> {
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.white,
-                          border: Border.all(width: 3, color: cSecondaryOne)),
+                          border: Border.all(width: 3, color: cGreenColor)),
                     ),
                   );
                 }),
