@@ -119,7 +119,7 @@ class BusinessCategoryItemView extends StatelessWidget {
                 height: 30.h,
                 borderRadius: 30,
                 text: "View More",
-                buttonColor: cSecondaryOne,
+                buttonColor: cGreenColor,
                 fontColor: Colors.white,
                 onPressed: (){
                 }),
