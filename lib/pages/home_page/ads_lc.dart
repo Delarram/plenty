@@ -1,6 +1,7 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newpj/pages/home_page/all_pages/ads_all_page.dart';
 import 'package:newpj/widgets/custom_text.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import '../../resources/color_const.dart';
@@ -52,19 +53,24 @@ class _LocalServiceItemState extends State<LocalServiceItem> {
         Row(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
-            Container(
-              padding: EdgeInsets.all(5),
-              margin: EdgeInsets.only(right: 15,bottom: 5),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(12),
-                  color: cGreenColor
+            InkWell(
+              onTap: (){
+                Navigator.push(context, MaterialPageRoute(builder: (_)=>AdsPage()));
+              },
+              child: Container(
+                padding: EdgeInsets.all(5),
+                margin: EdgeInsets.only(right: 15,bottom: 5),
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(12),
+                    color: cGreenColor
+                ),
+                child: CustomTextView(
+                      text: "All",
+                      fontColor:Colors.white,
+                      fontSize: 10.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
               ),
-              child: CustomTextView(
-                    text: "All",
-                    fontColor:Colors.white,
-                    fontSize: 10.sp,
-                    fontWeight: FontWeight.bold,
-                  ),
             )
           ],
         ),
