@@ -2,6 +2,7 @@ import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:newpj/widgets/animated_loading_dialog.dart';
 import 'package:newpj/widgets/custom_button.dart';
 import '../../widgets/custom_text.dart';
 
@@ -127,10 +128,12 @@ class BusinessCategoryItemView extends StatelessWidget {
                 borderRadius: 30,
                 text: "View More",
                 buttonColor:
-                // cSecondaryOne,
                 Color(0xff5DBB63),
                 fontColor: Colors.white,
                 onPressed: (){
+                  showDialog(context: (context), builder: (context){
+                    return AnimatedDialog();
+                  });
                 }),
           )
         ],
