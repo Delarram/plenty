@@ -59,7 +59,7 @@ class BusinessCategoryItemView extends StatelessWidget {
             borderRadius: BorderRadius.only(topLeft: Radius.circular(13.r),topRight: Radius.circular(13.r)),
             child: CachedNetworkImage(
               height: 130,
-              width: 200,
+              width: 230,
               fit: BoxFit.cover,
               imageUrl:
               "https://thumbs.dreamstime.com/z/stack-books-isolated-white-background-34637153.jpg",

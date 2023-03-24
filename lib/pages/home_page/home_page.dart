@@ -32,7 +32,7 @@ class _HomepageState extends State<Homepage> {
                 leading: Builder(builder: (BuildContext context) {
                   return GestureDetector(
                     onTap: () {
-                      Navigator.pop(context);
+
                     },
                     child: Container(
                       margin: const EdgeInsets.only(left: 10),
@@ -41,7 +41,7 @@ class _HomepageState extends State<Homepage> {
                       decoration: BoxDecoration(
                           shape: BoxShape.circle,
                           color: Colors.white,
-                          border: Border.all(width: 3, color: cSecondaryOne)),
+                          border: Border.all(width: 3, color: Colors.yellow)),
                     ),
                   );
                 }),
@@ -57,7 +57,7 @@ class _HomepageState extends State<Homepage> {
                   color: Colors.black,
                 ),
                 backgroundColor: cBackGroundWhite,
-                expandedHeight: MediaQuery.of(context).size.height / 4,
+                expandedHeight: MediaQuery.of(context).size.height / 3,
                 floating: false,
                 pinned: true,
                 flexibleSpace: FlexibleSpaceBar(
@@ -80,7 +80,7 @@ class _HomepageState extends State<Homepage> {
           },
           body: SingleChildScrollView(
             child: Container(
-              decoration: BoxDecoration(
+              decoration: const BoxDecoration(
                 borderRadius: BorderRadius.only(
                     topRight: Radius.circular(20),
                     topLeft: Radius.circular(20)),
@@ -89,14 +89,14 @@ class _HomepageState extends State<Homepage> {
               child: Column(
                 children: [
                   const SummariesTitle(),
-                  const SizedBox(height: 250, child: SummariesListview()),
+                  const SizedBox(height: 280, child: SummariesListview()),
                   Container(
                     height: 10,
                     width: double.infinity,
                     color: cBackGroundSix,
                   ),
                   const PopularBookTitle(),
-                  const SizedBox(height: 250, child: PopularListview()),
+                  const SizedBox(height: 280, child: PopularListview()),
                   Container(
                     height: 10,
                     width: double.infinity,
@@ -104,7 +104,7 @@ class _HomepageState extends State<Homepage> {
                   ),
                   const BestSellerTitle(),
                   const SizedBox(
-                    height: 250,
+                    height: 280,
                     width: double.infinity,
                     child: BestSellerListView(),
                   ),

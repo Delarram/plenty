@@ -20,17 +20,22 @@ class PopularBookTitle extends StatelessWidget {
             fontSize: 16,
             isUnderLine: true,
           ),
-          Container(
-            padding: EdgeInsets.all(5),
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              color: cGreenColor
-            ),
-            child: CustomTextView(
-              text: "All",
-              fontColor:Colors.white,
-              fontSize: 10.sp,
-              fontWeight: FontWeight.bold,
+          InkWell(
+            onTap: (){
+              // Navigator.push(context, MaterialPageRoute(builder: (_)=>));
+            },
+            child: Container(
+              padding: EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(12),
+                color: cGreenColor
+              ),
+              child: CustomTextView(
+                text: "All",
+                fontColor:Colors.white,
+                fontSize: 10.sp,
+                fontWeight: FontWeight.bold,
+              ),
             ),
           )
         ],
