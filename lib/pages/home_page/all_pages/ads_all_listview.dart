@@ -50,7 +50,7 @@ final String imageList;
                 ),
               ),
             ),
-            Flexible(
+            const Flexible(
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 12),
                 child: CustomTextView(text: "This is the book u have ever \nseen decide ur future\nseen decide ur future hello hello hello",fontWeight: FontWeight.w500,fontSize: 18,maxLine: 2,),

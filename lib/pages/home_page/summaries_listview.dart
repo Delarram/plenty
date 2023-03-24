@@ -1,5 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newpj/resources/color_const.dart';
 import 'package:newpj/widgets/custom_button.dart';
@@ -53,14 +54,15 @@ class BusinessCategoryItemView extends StatelessWidget {
             ),
           ]),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
             padding: const EdgeInsets.all(8.0),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(13.r),
               child: CachedNetworkImage(
-                height: 130,
-                width: 180,
+                height: 150,
+                width: 230,
                 fit: BoxFit.cover,
                 imageUrl:
                     "https://us.123rf.com/450wm/vejaa/vejaa2203/vejaa220300238/184438727-female-hands-holding-pile-of-books-over-light-blue-background-education-self-learning-book-swap.jpg?ver=6",
@@ -76,20 +78,59 @@ class BusinessCategoryItemView extends StatelessWidget {
           SizedBox(
             height: 5,
           ),
-          CustomTextView(
-            text: "Naughty But Nice Revolution ",
-            fontSize: 12.sp,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal:10.0),
+            child: CustomTextView(
+              text: "Naughty But Nice Revolution ",
+              fontSize: 12.sp,
+            ),
           ),
-          SizedBox(height: 10,),
-          CustomButtonView(
-            width: 180,
-              height: 30.h,
-              borderRadius: 30,
-              text: "View More",
-              buttonColor: cGreenColor,
-              fontColor: Colors.white,
-              onPressed: (){
-              })
+          SizedBox(height: 5,),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10),
+            child: Row(
+              children: [
+                const CustomTextView(
+                  text: "4.9",
+                  fontSize: 13,
+                  fontWeight: FontWeight.w600,
+                ),
+                const SizedBox(
+                  width: 8,
+                ),
+                RatingBar.builder(
+                  initialRating:5.0,
+                  minRating: 1,
+                  direction: Axis.horizontal,
+                  allowHalfRating: true,
+                  itemCount: 5,
+                  itemBuilder: (context, _) => const Icon(
+                    Icons.star,
+                    color: Colors.amber,
+                  ),
+                  itemSize: 12,
+                  onRatingUpdate: (rating) {
+                    print(rating);
+                  },
+                )
+              ],
+            ),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20),
+            child: CustomButtonView(
+              width: 200,
+                height: 30.h,
+                borderRadius: 30,
+                text: "View More",
+                buttonColor: cGreenColor,
+                fontColor: Colors.white,
+                onPressed: (){
+                }),
+          )
         ],
       ),
     );

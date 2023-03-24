@@ -31,7 +31,7 @@ class _LocalServiceItemState extends State<LocalServiceItem> {
   Widget build(BuildContext context) {
     final List<Widget> imageSliders = widget.localServiceList
         .map((item) => ClipRRect(
-      borderRadius: BorderRadius.circular(12),
+      // borderRadius: BorderRadius.circular(12),
       child: GestureDetector(
         onTap: (){
         },
@@ -48,63 +48,69 @@ class _LocalServiceItemState extends State<LocalServiceItem> {
     ))
         .toList();
 
-    return Column(
+    return Stack(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.end,
+        Column(
           children: [
-            InkWell(
-              onTap: (){
-                Navigator.push(context, MaterialPageRoute(builder: (_)=>AdsPage()));
-              },
-              child: Container(
-                padding: EdgeInsets.all(5),
-                margin: EdgeInsets.only(right: 15,bottom: 5),
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(12),
-                    color: cGreenColor
-                ),
-                child: CustomTextView(
-                      text: "All",
-                      fontColor:Colors.white,
-                      fontSize: 10.sp,
-                      fontWeight: FontWeight.bold,
-                    ),
+            // Row(
+            //   mainAxisAlignment: MainAxisAlignment.end,
+            //   children: [
+            //     InkWell(
+            //       onTap: (){
+            //         Navigator.push(context, MaterialPageRoute(builder: (_)=>AdsPage()));
+            //       },
+            //       child: Container(
+            //         padding: EdgeInsets.all(5),
+            //         margin: EdgeInsets.only(right: 15,bottom: 5),
+            //         decoration: BoxDecoration(
+            //             borderRadius: BorderRadius.circular(12),
+            //             color: cGreenColor
+            //         ),
+            //         child: CustomTextView(
+            //               text: "All",
+            //               fontColor:Colors.white,
+            //               fontSize: 10.sp,
+            //               fontWeight: FontWeight.bold,
+            //             ),
+            //       ),
+            //     )
+            //   ],
+            // ),
+            Expanded(
+              child: CarouselSlider(
+                items: imageSliders,
+                options: CarouselOptions(
+                    autoPlay: true,
+                    viewportFraction: 1,
+                    onPageChanged: (index, something) {
+                      setState(() {
+                        _current = index;
+                      });
+                    }),
               ),
-            )
+            ),
           ],
         ),
-        Expanded(
-          child: CarouselSlider(
-            items: imageSliders,
-            options: CarouselOptions(
-                autoPlay: true,
-                enlargeCenterPage: true,
-                aspectRatio: 3.5,
-                onPageChanged: (index, something) {
-                  setState(() {
-                    _current = index;
-                  });
-                }),
+        Align(
+          alignment: Alignment.bottomCenter,
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: widget.localServiceList.map((url) {
+              int index = widget.localServiceList.indexOf(url);
+              return Container(
+                width: 12.h,
+                height: 4.w,
+                margin: EdgeInsets.symmetric(
+                  vertical: 15.h,
+                  horizontal: 4.w,
+                ),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: _current == index ? cPrimaryOne : Colors.white,
+                ),
+              );
+            }).toList(),
           ),
-        ),
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: widget.localServiceList.map((url) {
-            int index = widget.localServiceList.indexOf(url);
-            return Container(
-              width: 12.h,
-              height: 4.w,
-              margin: EdgeInsets.symmetric(
-                vertical: 15.h,
-                horizontal: 4.w,
-              ),
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: _current == index ? cPrimaryOne : Colors.white,
-              ),
-            );
-          }).toList(),
         ),
       ],
     );
