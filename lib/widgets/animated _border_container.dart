@@ -63,10 +63,11 @@ class _AnimatedBorderState extends State<AnimatedBorder> {
       child: Container(
         height: 50,
         width: 50,
-        padding: EdgeInsets.all(8),
+        padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
             color: cPrimaryThree.withOpacity(0.5),
-            shape: BoxShape.circle),
+            shape: BoxShape.circle,
+        ),
         child: Container(
           height: 45,
           width: 45,
