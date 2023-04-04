@@ -21,7 +21,7 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-
+String? mToken = "";
 
   void initState() {
     FirebaseMessaging.instance.getToken().then((newToken) {
@@ -43,7 +43,6 @@ class _HomepageState extends State<Homepage> {
       provisional: false,
       sound: true
     );
-
     if(settings.authorizationStatus == AuthorizationStatus.authorized){
       print("User granted permission");
     }else if(settings.authorizationStatus == AuthorizationStatus.provisional){
@@ -51,9 +50,15 @@ class _HomepageState extends State<Homepage> {
     }else{
       print("User declined permission");
     }
-
-
   }
+
+  void getToken() async{
+    await FirebaseMessaging.instance.getToken().then((newToken){
+      setState(() {
+        mToken= newToken;
+      });
+    });
+}
 
   @override
   Widget build(BuildContext context) {
