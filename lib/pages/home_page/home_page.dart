@@ -1,3 +1,4 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:newpj/pages/home_page/ads_lc.dart';
@@ -20,7 +21,40 @@ class Homepage extends StatefulWidget {
 }
 
 class _HomepageState extends State<Homepage> {
-  @override
+
+
+  void initState() {
+    FirebaseMessaging.instance.getToken().then((newToken) {
+      print("FCM Token");
+      print(newToken);
+
+
+    });
+  }
+
+  void requestPermission() async{
+    FirebaseMessaging messaging = FirebaseMessaging.instance;
+    NotificationSettings settings = await messaging.requestPermission(
+      alert: true,
+      announcement: false,
+      badge: true,
+      carPlay: false,
+      criticalAlert: false,
+      provisional: false,
+      sound: true
+    );
+
+    if(settings.authorizationStatus == AuthorizationStatus.authorized){
+      print("User granted permission");
+    }else if(settings.authorizationStatus == AuthorizationStatus.provisional){
+      print("User granted provisional permission");
+    }else{
+      print("User declined permission");
+    }
+
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,9 +65,7 @@ class _HomepageState extends State<Homepage> {
               SliverAppBar(
                 leading: Builder(builder: (BuildContext context) {
                   return GestureDetector(
-                    onTap: () {
-
-                    },
+                    onTap: () {},
                     child: Container(
                       margin: const EdgeInsets.only(left: 10),
                       height: 20,
@@ -108,7 +140,6 @@ class _HomepageState extends State<Homepage> {
                     width: double.infinity,
                     child: BestSellerListView(),
                   ),
-
                 ],
               ),
             ),
