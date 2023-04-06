@@ -27,8 +27,8 @@ String? mToken = "";
     FirebaseMessaging.instance.getToken().then((newToken) {
       print("FCM Token");
       print(newToken);
-
-
+      requestPermission();
+      getToken();
     });
   }
 
@@ -56,7 +56,9 @@ String? mToken = "";
     await FirebaseMessaging.instance.getToken().then((newToken){
       setState(() {
         mToken= newToken;
+        print("token==>$mToken");
       });
+      // saveToken(newToken);
     });
 }
 
