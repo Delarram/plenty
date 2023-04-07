@@ -1,48 +1,100 @@
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../resources/color_const.dart';
+import '../../widgets/custom_text.dart';
 
 
-class TipScreen extends StatelessWidget {
-  const TipScreen({
-    Key? key,
-  }) : super(key: key);
+class BestSellerDetail extends StatelessWidget {
+  const BestSellerDetail({Key? key, })
+      : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-   appBar: AppBar(
-     leading: Icon(Icons.arrow_back_ios),
-   ),
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 15.h),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 10.h,
-            ),
-            Expanded(
-              child: buildGridViewTips(),
-            ),
-          ],
-        ),
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        leading: Icon(Icons.arrow_back_ios),
       ),
-    );
-  }
+      body: SizedBox(
+          height: double.infinity,
+          width: double.infinity,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 0.3.sh,
+                width: double.infinity,
+                child: CachedNetworkImage(
+                  height: double.infinity,
+                  fit: BoxFit.fill,
+                  imageUrl: "",
+                  progressIndicatorBuilder:
+                      (context, url, downloadProgress) => Center(
+                    child: CircularProgressIndicator(
+                        value: downloadProgress.progress),
+                  ),
+                  errorWidget: (context, url, error) =>
+                  const Icon(Icons.error),
+                ),
+              ),
 
+              Padding(
+                padding:
+                EdgeInsets.only(top: 20.r, bottom: 8.r, left: 15.r),
+                child: CustomTextView(
+                  text: "12.3.123",
+                  //"${dateFormat(tipScreenVO.createdAt!)}",
+                  fontSize: 13.sp,
+                  fontColor: cBackGroundThree,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 10),
+                child: Row(
+                  children: [
+                    const CustomTextView(
+                      text: "4.9",
+                      fontSize: 13,
+                      fontWeight: FontWeight.w600,
+                    ),
+                    const SizedBox(
+                      width: 8,
+                    ),
+                    RatingBar.builder(
+                      initialRating:5.0,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      itemCount: 5,
+                      itemBuilder: (context, _) => const Icon(
+                        Icons.star,
+                        color: Colors.amber,
+                      ),
+                      itemSize: 12,
+                      onRatingUpdate: (rating) {
+                        print(rating);
+                      },
+                    )
+                  ],
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(left: 15.r, bottom: 15.r),
+                child: CustomTextView(
+                  text: "12.3.123",
+                  fontSize: 13.sp,
+                  fontColor: cBackGroundThree,
+                ),
+              ),
 
-  Widget buildGridViewTips() {
-    return Container(
-      decoration: BoxDecoration(borderRadius: BorderRadius.circular(8.r)),
-      child: GridView.builder(
-          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              crossAxisSpacing: 2,
-              mainAxisSpacing: 3,
-              childAspectRatio: 0.9),
-          itemCount:10,
-          itemBuilder: (context, index) {
-            return Container();
-          }),
+              // Padding(
+              //     padding: EdgeInsets.only(left: 15.r,right: 15.r),
+              //     child: HtmlWidget("${tipScreenVO.content}"))
+            ],
+          )),
     );
   }
 }
