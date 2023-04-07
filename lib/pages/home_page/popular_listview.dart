@@ -116,10 +116,10 @@ class BusinessCategoryItemView extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 5,
           ),
-          SizedBox(height: 10,),
+          const SizedBox(height: 10,),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 20),
             child: CustomButtonView(
@@ -128,7 +128,7 @@ class BusinessCategoryItemView extends StatelessWidget {
                 borderRadius: 30,
                 text: "View More",
                 buttonColor:
-                Color(0xff5DBB63),
+                const Color(0xff5DBB63),
                 fontColor: Colors.white,
                 onPressed: (){
                   showDialog(context: (context), builder: (context){
