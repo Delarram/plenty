@@ -6,14 +6,18 @@ import '../../resources/color_const.dart';
 import '../../widgets/custom_text.dart';
 
 
-class TipScreenDetail extends StatelessWidget {
-  const TipScreenDetail({Key? key, })
+class BestSellerDetail extends StatelessWidget {
+  const BestSellerDetail({Key? key, })
       : super(key: key);
 
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: true,
+        leading: Icon(Icons.arrow_back_ios),
+      ),
       body: SizedBox(
           height: double.infinity,
           width: double.infinity,
