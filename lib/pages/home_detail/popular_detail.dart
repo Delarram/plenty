@@ -10,7 +10,7 @@ class PopularDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: CustomTextView(text: "hello",),
+        title: const CustomTextView(text: "hello",),
       ),
       body: SingleChildScrollView(
         child: Column(children: [
@@ -18,7 +18,6 @@ class PopularDetail extends StatelessWidget {
             height: 0.4.sh,
             width: double.infinity,
             child: CachedNetworkImage(
-              height: double.infinity,
               fit: BoxFit.fill,
               imageUrl: "",
               progressIndicatorBuilder:
