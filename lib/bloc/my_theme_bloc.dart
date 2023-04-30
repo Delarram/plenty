@@ -1,4 +1,16 @@
 import 'package:flutter/material.dart';
+class MyThemeBloc extends ChangeNotifier{
+ThemeMode themeMode = ThemeMode.dark;
+
+bool get isDarkMode {
+return themeMode == ThemeMode.dark;
+}
+void switchTheme(bool isON){
+themeMode = isON?ThemeMode.dark:ThemeMode.light;
+notifyListeners();
+}
+}
+
 
 class MyTheme{
 static final darkTheme = ThemeData(
